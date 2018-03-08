@@ -1,3 +1,5 @@
+# this class manages the routing
+
 import webapp2
 from MainPage import MainPage
 from Survey import Survey
