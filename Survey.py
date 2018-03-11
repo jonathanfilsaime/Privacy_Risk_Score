@@ -31,7 +31,8 @@ class Survey(webapp2.RequestHandler):
         for answer in answers:
             answerDic = {
                 'id' : answer.id,
-                'answer' : answer.answer
+                'answer' : answer.answer,
+                'value' : answer.value
             }
             answersDictionary.append(answerDic)
 
