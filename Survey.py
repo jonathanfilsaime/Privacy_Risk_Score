@@ -8,6 +8,7 @@ import json
 from QuestionsDB import Questions
 from AnswersDB import Answers
 from ScoreCalculator import ScoreCalculator
+from VisitsDB import Visits
 
 class Survey(webapp2.RequestHandler):
     def get(self):
@@ -52,10 +53,17 @@ class Survey(webapp2.RequestHandler):
              self.response.write("\n")
              responseArray.append(key[value].rstrip())
 
+        visits = Visits.all().count()
+        memberID = visits + 1
+
+        visitor = Visits(id = memberID)
+        visitor.put()
+
         compute = ScoreCalculator()
-        score = compute.computeScore(responseArray)
+        score = compute.computeScore(responseArray, memberID)
 
         self.response.write("SCORE =  " + str(score))
+        self.response.headers.add_header('Set-Cookie', 'score=%s ; Path=/' %score)
 
 
 
