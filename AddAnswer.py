@@ -15,8 +15,8 @@ class AddAnswer(webapp2.RequestHandler):
         with io.open(fileNameAndPath) as file:
             for line in file:
                 element = line.split(',')
-                i = 0
-                while i < len(element):
-                    question = Answers(id = int(element[0]), answer = element[i])
-                    question.put()
-                    i += 1
+                value = False
+                if element[2] == 'true':
+                    value = True
+                answer = Answers(id = int(element[0]), answer = element[1], value = value)
+                answer.put()

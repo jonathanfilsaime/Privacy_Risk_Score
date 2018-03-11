@@ -35,9 +35,15 @@ class Survey(webapp2.RequestHandler):
             }
             answersDictionary.append(answerDic)
 
-        self.response.write(json.dumps(questionsDictionary))
-        self.response.write(json.dumps(answersDictionary))
+        jsonResponse = []
+        jsonResponse.append(questionsDictionary)
+        jsonResponse.append(answersDictionary)
+        self.response.write(json.dumps(jsonResponse))
 
+    def post(self):
+        responses = self.request.body
+        for response in responses:
+            self.response.write(response)
 
 
 
