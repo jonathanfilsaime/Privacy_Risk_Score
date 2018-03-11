@@ -16,7 +16,7 @@ class AddAnswer(webapp2.RequestHandler):
             for line in file:
                 element = line.split(',')
                 value = False
-                if element[2] == 'true':
+                if element[2].rstrip() == 'true':
                     value = True
                 answer = Answers(id = int(element[0]), answer = element[1], value = value)
                 answer.put()

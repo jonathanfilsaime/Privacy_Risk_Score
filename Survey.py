@@ -7,6 +7,7 @@ import webapp2
 import json
 from QuestionsDB import Questions
 from AnswersDB import Answers
+from ScoreCalculator import ScoreCalculator
 
 class Survey(webapp2.RequestHandler):
     def get(self):
@@ -42,9 +43,28 @@ class Survey(webapp2.RequestHandler):
         self.response.write(json.dumps(jsonResponse))
 
     def post(self):
-        responses = self.request.body
-        for response in responses:
-            self.response.write(response)
+        responses = json.loads(self.request.body)
+
+        responseArray = []
+        for key in responses:
+            for value in key:
+             self.response.write(key[value])
+             self.response.write("\n")
+             responseArray.append(key[value].rstrip())
+
+        compute = ScoreCalculator()
+        score = compute.computeScore(responseArray)
+
+        self.response.write("SCORE =  " + str(score))
+
+
+
+
+
+
+
+
+
 
 
 

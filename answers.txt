@@ -1,7 +1,6 @@
-1,1 months,true
-1,3 months,true
 1,6 months,true
 1,12 months,false
+1,more than months,false
 2,yes,true
 2,no,false
 3,yes,false
@@ -11,9 +10,9 @@
 5,yes,true
 5,no,false
 6,facebook,true
-6,instagram,true
-6,twitter,true
-6,snap chat,true
+6,instagram,false
+6,twitter,false
+6,snap chat,false
 7,phone number,false
 7,address,false
 7,work,false
