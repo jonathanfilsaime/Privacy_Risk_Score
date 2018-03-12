@@ -11,7 +11,7 @@ from AddAnswer import AddAnswer
 from Delete import Delete
 from ViewMembersScore import ViewMembersScore
 from ViewMembersAnswers import ViewMembersAnswers
-from Visits import Visits
+from ViewVisits import ViewVisits
 from AddFirstVisit import AddFirstVisit
 
 app = webapp2.WSGIApplication([('/', MainPage),
@@ -24,6 +24,6 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/admin/delete', Delete),
                                ('/admin/memberscore', ViewMembersScore),
                                ('/admin/memberanswers', ViewMembersAnswers),
-                               ('/admin/visits', Visits),
+                               ('/admin/visits', ViewVisits),
                                ('/admin/addfirstvisit', AddFirstVisit)
                                 ], debug=True)
