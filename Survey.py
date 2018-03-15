@@ -13,6 +13,7 @@ from VisitsDB import Visits
 class Survey(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
         questionsDictionary = []
         questions = Questions.all()
         questions.order('id')
@@ -44,6 +45,7 @@ class Survey(webapp2.RequestHandler):
         self.response.write(json.dumps(jsonResponse))
 
     def post(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
         responses = json.loads(self.request.body)
 
         responseArray = []
@@ -61,7 +63,14 @@ class Survey(webapp2.RequestHandler):
 
         jsonResponse = []
         jsonResponse.append(score)
+        jsonResponse.append(memberID)
         self.response.write(json.dumps(jsonResponse))
+
+    def options(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
+        self.response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        self.response.headers['Allow'] = 'GET, POST'
+        self.response.write("200 OK")
 
 
 

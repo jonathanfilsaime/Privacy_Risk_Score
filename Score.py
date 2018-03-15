@@ -5,6 +5,12 @@ from google.appengine.ext import db
 class Score(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
+        response = self.request.GET
+        self.response.write(response)
+
+        # for r in response:
+        #     self.response.write(r)
+
 
         memberID = ""
         idQuery = db.GqlQuery("SELECT id FROM Visits ORDER BY id DESC LIMIT 1")
@@ -22,6 +28,7 @@ class Score(webapp2.RequestHandler):
 
     def option(self):
         self.response.write("200")
+
 
 
 
