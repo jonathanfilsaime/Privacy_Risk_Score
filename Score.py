@@ -20,5 +20,8 @@ class Score(webapp2.RequestHandler):
         jsonResponse.append(score)
         self.response.write(json.dumps(jsonResponse))
 
+    def option(self):
+        self.response.write("200")
+
 
 
