@@ -5,7 +5,8 @@ class ViewMembersAnswers(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
         memberAnswers = MemberAnswers.all()
-        memberAnswers.order('memberID' and 'questionID')
+        # memberAnswers.order('memberID' and 'questionID')
+        memberAnswers.order('questionID')
 
         for ma in memberAnswers:
             self.response.write("\n")
@@ -16,6 +17,8 @@ class ViewMembersAnswers(webapp2.RequestHandler):
             self.response.write(ma.answer)
             self.response.write("\n")
             self.response.write(ma.value)
+            self.response.write("\n")
+            self.response.write(ma.category)
             self.response.write("\n")
             self.response.write("-----------")
 

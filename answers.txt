@@ -1,20 +1,20 @@
-1,6 months,true
-1,12 months,false
-1,more than months,false
-2,yes,true
-2,no,false
-3,yes,false
-3,no,true
-4,yes,true
-4,no,false
-5,yes,true
-5,no,false
-6,facebook,true
-6,instagram,false
-6,twitter,false
-6,snap chat,false
-7,phone number,false
-7,address,false
-7,work,false
-7,email,true
-7,birthday,false
+1,6 months,true,credit monitoring
+1,12 months,false,credit monitoring
+1,more than 12 months,false,credit monitoring
+2,yes,true,credit monitoring
+2,no,false,credit monitoring
+3,yes,false,authentication
+3,no,true,authentication
+4,yes,true,authentication
+4,no,false,authentication
+5,yes,true,authentication
+5,no,false,authentication
+6,facebook,true,social media
+6,instagram,false,social media
+6,twitter,false,social media
+6,snap chat,false,social media
+7,phone number,false,social media
+7,address,false,social media
+7,work,false,social media
+7,email,true,social media
+7,birthday,false,social media

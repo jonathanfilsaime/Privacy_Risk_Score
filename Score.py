@@ -1,7 +1,24 @@
 import webapp2
+import json
+from google.appengine.ext import db
 
 class Score(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        score = str(self.request.cookies.get('score'))
-        self.response.write(score)
+
+        memberID = ""
+        idQuery = db.GqlQuery("SELECT id FROM Visits ORDER BY id DESC LIMIT 1")
+        for row in idQuery:
+            memberID = row.id
+
+        score = ""
+        scoreQuery = db.GqlQuery("SELECT score FROM MemberScore WHERE memberID = " + str(memberID))
+        for row in scoreQuery:
+            score = row.score
+
+        jsonResponse = []
+        jsonResponse.append(score)
+        self.response.write(json.dumps(jsonResponse))
+
+
+

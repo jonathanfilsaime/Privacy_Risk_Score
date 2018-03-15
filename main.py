@@ -18,12 +18,11 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/survey', Survey),
                                ('/score', Score),
                                ('/recommendation', Recommendation),
-                               ('/admin', Admin),
+                               ('/admin/dashboard', Admin),
                                ('/admin/addquestion', AddQuestion),
                                ('/admin/addanswer', AddAnswer),
                                ('/admin/delete', Delete),
                                ('/admin/memberscore', ViewMembersScore),
                                ('/admin/memberanswers', ViewMembersAnswers),
                                ('/admin/visits', ViewVisits),
-                               ('/admin/addfirstvisit', AddFirstVisit)
-                                ], debug=True)
+                               ('/admin/addfirstvisit', AddFirstVisit)], debug=True)

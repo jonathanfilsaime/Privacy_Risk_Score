@@ -10,9 +10,11 @@ class ScoreCalculator:
         answers.order('id')
 
         valueTable = []
+        categoryTable = []
         for answer in answers:
             if answer.value:
                 valueTable.append(answer.answer.rstrip())
+                categoryTable.append(answer.category.rstrip())
 
         index = 0
         score = 0
@@ -23,7 +25,7 @@ class ScoreCalculator:
                 value = True
                 score += 1
 
-            memberAnswer = MemberAnswers(memberID = memberID, questionID = index, answer = responseArray[index], value = value)
+            memberAnswer = MemberAnswers(memberID = memberID, questionID = (index+1), answer = responseArray[index], value = value, category = categoryTable[index])
             memberAnswer.put()
             index += 1
 

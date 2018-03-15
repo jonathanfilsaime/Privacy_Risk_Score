@@ -18,5 +18,5 @@ class AddAnswer(webapp2.RequestHandler):
                 value = False
                 if element[2].rstrip() == 'true':
                     value = True
-                answer = Answers(id = int(element[0]), answer = element[1], value = value)
+                answer = Answers(id = int(element[0]), answer = element[1], value = value, category = element[3])
                 answer.put()

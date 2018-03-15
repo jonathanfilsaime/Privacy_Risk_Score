@@ -26,9 +26,9 @@ class Survey(webapp2.RequestHandler):
             }
             questionsDictionary.append(questionDic)
 
+        answersDictionary = []
         answers = Answers.all()
         answers.order('id')
-        answersDictionary = []
 
         for answer in answers:
             answerDic = {
@@ -49,21 +49,19 @@ class Survey(webapp2.RequestHandler):
         responseArray = []
         for key in responses:
             for value in key:
-             self.response.write(key[value])
-             self.response.write("\n")
-             responseArray.append(key[value].rstrip())
+                responseArray.append(key[value].rstrip())
 
         visits = Visits.all().count()
         memberID = visits + 1
-
         visitor = Visits(id = memberID)
         visitor.put()
 
         compute = ScoreCalculator()
         score = compute.computeScore(responseArray, memberID)
 
-        self.response.write("SCORE =  " + str(score))
-        self.response.headers.add_header('Set-Cookie', 'score=%s ; Path=/' %score)
+        jsonResponse = []
+        jsonResponse.append(score)
+        self.response.write(json.dumps(jsonResponse))
 
 
 
