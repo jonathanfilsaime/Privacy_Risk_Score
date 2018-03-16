@@ -1,21 +1,42 @@
 import webapp2
 import json
 from VisitsDB import Visits
-from google.appengine.ext import db
+from ComputeCategoryPercentage import ComputeCategoryPercentage
+
 
 class Admin(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Admin Page')
 
         visits = Visits.all().count()
 
-        idQuery = db.GqlQuery("SELECT * FROM MemberAnswers WHERE category = " + str('authentication'))
+        percentage = ComputeCategoryPercentage()
+        credit = percentage.compute("credit monitoring")
+        authentication = percentage.compute("authentication")
+        social = percentage.compute("social media")
+        # devices = percentage.compute("devices")
 
-        count = 0
-        for i in idQuery:
-            count += 1
-        self.response.write(count)
+        dashboard = {
+            'visits' : visits,
+            'credit monitoring' : credit,
+            'authentication' : authentication,
+            'social media' : social
+            # 'devices' : devices
+        }
+
+        jsonResponse = []
+        jsonResponse.append(dashboard)
+        self.response.write(json.dumps(jsonResponse))
+
+
+
+
+
+
+
+
+
+
 
 
 
