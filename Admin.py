@@ -5,6 +5,7 @@ from ComputeCategoryPercentage import ComputeCategoryPercentage
 
 class Admin(webapp2.RequestHandler):
     def get(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
         self.response.headers['Content-Type'] = 'text/plain'
 
         visits = Visits.all().count()
