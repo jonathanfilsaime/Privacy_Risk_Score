@@ -7,4 +7,4 @@
 7,Do you have your phone number or home address on your social media profile ?,social media
 8,Do you use an ad blocker on your internet browser ?,social media
 9,Do you use a VPN (virtual private network) ?,devices
-10,Are your phones, tablets, and computers set to automatically update the OS (operating system) ?,devices
+10,Are your phones tablets and computers set to automatically update the OS (operating system) ?,devices
