@@ -9,12 +9,15 @@
 4,no,false,authentication
 5,yes,true,authentication
 5,no,false,authentication
-6,facebook,true,social media
-6,instagram,false,social media
-6,twitter,false,social media
-6,snap chat,false,social media
-7,phone number,false,social media
-7,address,false,social media
-7,work,false,social media
-7,email,true,social media
-7,birthday,false,social media
+6,public,false,social media
+6,friends,true,social media
+6,friends of friends,false,social media
+6,only Me,false,social media
+7,yes,false,social media
+7,no,true,social media
+8,yes,true,social media
+8,no,false,social media
+9,yes,true,devices
+9,no,false,devices
+10,yes,true,devices
+10,no,false,devices

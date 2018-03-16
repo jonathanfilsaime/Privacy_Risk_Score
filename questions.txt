@@ -1,7 +1,10 @@
-1,Have you requested a credit report in the past,credit monitoring
-2,Do you have credit monitor service,credit monitoring
-3,Do you have the same password for more than one account,authentication
-4,Do you use an automatic password generator,authentication
-5,Do you use two factor authentication,authentication
-6,Which of the following social media network do you use,social media
-7,Do you share the following information publicly in your social network,social media
+1,Have you requested your credit report in the past,credit monitoring
+2,Do you have credit monitor service ?,credit monitoring
+3,Do you have the same password for more than one account ?,authentication
+4,Do you use an automatic password generator ?,authentication
+5,Do you use two factor authentication ?,authentication
+6,Are your social media profile settings set to: ,social media
+7,Do you have your phone number or home address on your social media profile ?,social media
+8,Do you use an ad blocker on your internet browser ?,social media
+9,Do you use a VPN (virtual private network) ?,devices
+10,Are your phones, tablets, and computers set to automatically update the OS (operating system) ?,devices

@@ -29,7 +29,9 @@ class ScoreCalculator:
             memberAnswer.put()
             index += 1
 
-        memberScore = MemberScore(memberID = memberID, score = score)
+        scorePercentage = 100 * score / index
+
+        memberScore = MemberScore(memberID = memberID, score = scorePercentage)
         memberScore.put()
 
-        return score
+        return scorePercentage
