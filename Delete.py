@@ -7,6 +7,7 @@ from AnswersDB import Answers
 from MemberAnswersDB import MemberAnswers
 from MemberScoreDB import MemberScore
 from VisitsDB import Visits
+from RecommendationsDB import Recommendations
 
 class Delete(webapp2.RequestHandler):
     def get(self):
@@ -36,5 +37,10 @@ class Delete(webapp2.RequestHandler):
 
         for visit in visits:
             visit.delete()
+
+        recommendations = Recommendations.all()
+
+        for recommendation in recommendations:
+            recommendation.delete()
 
         self.response.write("everything got deleted")
