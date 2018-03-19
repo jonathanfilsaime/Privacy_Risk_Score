@@ -1,3 +1,12 @@
+# this class is the endpoitn for the dashboard
+# it returns a Json object with the percentages
+# for each of the categories
+# 0-Visits (the number of people who took the survey)
+# 1-Credit monitoring
+# 2-Authentication
+# 3-Social Media
+# 4-Devices
+
 import webapp2
 import json
 from VisitsDB import Visits

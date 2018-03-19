@@ -1,3 +1,5 @@
+#  the database for all member answers
+
 from google.appengine.ext import db
 
 class MemberAnswers(db.Model):
