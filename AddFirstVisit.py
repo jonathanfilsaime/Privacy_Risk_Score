@@ -1,3 +1,5 @@
+# this class adds the first visitor if needed
+
 import webapp2
 from VisitsDB import Visits
 

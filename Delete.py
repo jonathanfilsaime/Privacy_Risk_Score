@@ -1,5 +1,4 @@
-# this class delete both question
-# and answer database
+# this class deletes all tables in the database
 
 import webapp2
 from QuestionsDB import Questions

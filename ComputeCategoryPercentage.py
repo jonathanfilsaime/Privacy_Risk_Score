@@ -1,3 +1,5 @@
+# This calls computes teh percentage of correct answer for a passed in category
+
 from google.appengine.ext import db
 
 class ComputeCategoryPercentage:

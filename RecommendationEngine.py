@@ -1,3 +1,7 @@
+# this class determines which answers
+# were missed and build the Recommendation
+# Json object
+
 from MemberAnswersDB import MemberAnswers
 from RecommendationsDB import Recommendations
 
@@ -10,6 +14,9 @@ class RecommendationEngine():
             "social media" : True,
             "devices" : True
         }
+
+        # retrieves all answers and marks
+        # has false any categor with aworng answer
         memberAnswers = MemberAnswers.all()
         memberAnswers.order('-value')
         for memberAnswer in memberAnswers:
@@ -33,7 +40,6 @@ class RecommendationEngine():
         for recommendation in recommendations:
             if recommendation.category.rstrip() in category:
                 recDic = {
-                    'recommendation' : recommendation.recommendation,
                     'link' : recommendation.link,
                     'category' : recommendation.category
                 }

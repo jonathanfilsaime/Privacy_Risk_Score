@@ -1,3 +1,7 @@
+# this class read from a file and populates the
+# database table RecommendationsDB
+# this is strictly for admin use
+
 import webapp2
 import io
 from RecommendationsDB import Recommendations
@@ -15,6 +19,5 @@ class AddRecommendation(webapp2.RequestHandler):
 
                 self.response.write(element[0])
                 self.response.write(element[1])
-                self.response.write(element[2])
-                recommendation = Recommendations(recommendation = element[0], link = element[1], category = element[2])
+                recommendation = Recommendations(link = element[0], category = element[1])
                 recommendation.put()

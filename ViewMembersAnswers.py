@@ -1,3 +1,6 @@
+# this is an admin class to view all the answers
+# of all the members
+
 import webapp2
 from MemberAnswersDB import MemberAnswers
 

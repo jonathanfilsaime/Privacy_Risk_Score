@@ -1,3 +1,5 @@
+# this class computes the score and the averages
+
 import webapp2
 import json
 from MemberScoreDB import MemberScore

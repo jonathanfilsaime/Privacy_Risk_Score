@@ -1,3 +1,5 @@
+#  The database for al questions
+
 from google.appengine.ext import db
 
 class Questions(db.Model):
