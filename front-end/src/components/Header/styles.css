@@ -1,0 +1,18 @@
+.Header {
+  height: 100px;
+}
+
+.Header-banner {
+  height: 100px;
+  width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .Header {
+    height: 50px;
+  }
+
+  .Header-banner {
+    height: 50px;
+  }
+}

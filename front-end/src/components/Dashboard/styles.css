@@ -1,0 +1,30 @@
+.Dashboard {
+  display: grid;
+  padding: 15px 15px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 15px;
+
+  background-color: #e8e8e8;
+}
+
+.card {
+  height: auto;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+@media only screen and (min-width: 600px) {
+  .Dashboard {
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+  }
+  .card {
+    height: 375px;
+  }
+}

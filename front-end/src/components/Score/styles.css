@@ -1,0 +1,164 @@
+.Score {
+  overflow: scroll !important;
+  height: auto;
+  background-size: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: space-between;
+}
+
+.Score-loading {
+  text-align: center;
+}
+
+.Score-retake {
+  margin: -30px 0px -60px 0px;
+  padding: 15px;
+  text-decoration: underline;
+}
+
+.Score-score-section {
+  height: 80vh;
+  background: url(https://content.usaa.com/mcontent/static_assets/Media/enterprise_accent_greyLaurel.svg) no-repeat center, #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Score-header {
+  margin: 0;
+  text-align: center;
+  height: 50px;
+
+  font-weight: 600;
+  font-size: 38px;
+}
+
+.Score-link {
+  /* right: 5px;
+  position: absolute; */
+}
+
+.Score-stats {
+  line-height: initial;
+  font-family: 'Exo 2', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Score-score {
+  font-size: 90px;
+  font-weight: 900;
+}
+
+.Score-secondary-stats {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.Score-share {
+  display: flex;
+}
+
+.Score-share > img {
+  height: 40px;
+  width: 40px;
+  padding: 0px 15px;
+}
+
+.Score-bubble-0, .Score-bubble-1, .Score-bubble-2, .Score-bubble-3 {
+  position: absolute;
+  top: 39%;
+  left: 37.5%;
+
+  animation-name: diagonalUpLeft;
+  animation-duration: 2s;
+
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+
+  background-color: #a1b1bc;
+	border-radius: 100px;
+  box-shadow: 0 0px 0px #585c62, 0 2px 6px #585c62;
+}
+
+.Score-bubble-1 {
+  top: 74%;
+  left: 55%;
+
+  animation-name: diagonalDownRight;
+}
+
+.Score-bubble-2 {
+  top: 40%;
+  left: 55%;
+
+  animation-name: diagonalUpRight;
+}
+
+.Score-bubble-3 {
+  top: 74%;
+  left: 38%;
+
+  animation-name: diagonalDownLeft;
+}
+
+@keyframes diagonalUpLeft {
+    from {
+        transform: translatex(100px) translatey(100px)
+    }
+}
+
+@keyframes diagonalUpRight {
+  from {
+      transform: translatex(-100px) translatey(100px)
+  }
+  to {
+    transform: translatex(0px) translatey(0px)
+  }
+}
+
+@keyframes diagonalDownRight {
+    from {
+        transform: translatex(-100px) translatey(-100px)
+    }
+    to {
+      transform: translatex(0px) translatey(0px)
+    }
+}
+
+@keyframes diagonalDownLeft {
+    from {
+        transform: translatex(100px) translatey(-100px)
+    }
+    to {
+      transform: translatex(0px) translatey(0px)
+    }
+}
+
+.fb-like.fb_iframe_widget {
+  position: absolute;
+  bottom: 25px;
+}
+
+@media screen and (min-width: 575px) {
+  .Score-stats {
+    flex-direction: row;
+    margin-bottom: 115px;
+  }
+
+  .Score-score {
+    padding: 0px 35px;
+    font-size: 200px;
+  }
+
+  .Score-header {
+    font-size: 50px;
+  }
+}

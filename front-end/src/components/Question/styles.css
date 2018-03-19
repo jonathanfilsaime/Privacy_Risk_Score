@@ -1,0 +1,137 @@
+.Question {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  width: 80%;
+
+  font-family: 'Exo 2', sans-serif;
+}
+
+h2 { color: #111; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+.Question-header {
+  padding: 50px 0px;
+}
+
+.Question-questions {
+  height: 100%%;
+}
+
+.Question-answers {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 57%;
+}
+
+.Question-label {
+  text-transform: capitalize;
+  font-size: 35px;
+}
+
+.Question-questions {
+
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: #12395b;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #12395b;
+}
+
+.button:hover {
+    background-color: #12395b;
+    color: white;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.Question-label {
+  position: relative;
+  display: inline-block;
+  padding-top: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 42px;
+  padding-right: 10px;
+  line-height: 36px;
+  cursor: pointer;
+}
+.Question-label::before {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #12395b;
+  border-radius: 4px;
+  z-index: -1;
+}
+input[type="radio"] + label::before {
+  border-radius: 18px;
+}
+
+input[type="radio"]:checked + label {
+  padding-left: 10px;
+  color: #fff;
+}
+
+input[type="radio"]:checked + label::before {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #12395b;
+}
+/* Transition */
+.Question-label::before {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+
+@media screen and (max-width: 575px) {
+  .Question {
+    width: 100%;
+  }
+  .Question-header {
+    padding: 0px;
+    margin: 15px;
+  }
+  .Question-answers {
+    padding: 0px 15px;
+    width: 100%;
+  }
+  .Question-label {
+    font-size: 28px;
+  }
+  .Question-buttons {
+    display: flex;
+    justify-content: center;
+
+    bottom: 60px;
+    position: fixed;
+    width: 100%;
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
